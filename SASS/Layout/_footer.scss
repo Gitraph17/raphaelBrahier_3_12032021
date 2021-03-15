@@ -1,0 +1,29 @@
+.siteFooter {
+    background-color:#353535;
+    color:white;
+    @include flexCentering;
+    padding:10px 0 25px 0;
+    & .footerMenu{
+        width:85%;
+        max-width: 450px;
+        &__headline {
+            @include titleTypo;
+            width: 150px;
+        }
+    }
+}
+
+.footerNavList {
+    list-style-type: none;
+    padding:0;
+    &__link {
+        @include resetLinkStyle;
+    }
+    &__item {
+        padding-bottom: 10px;
+    }
+    &__icone {
+        width:10px;
+        margin-right: 20px;
+    }
+}

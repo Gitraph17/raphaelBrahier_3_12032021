@@ -1,0 +1,20 @@
+.bicolorButton {
+    border:none;
+    height:50px;
+    min-width: 185px;
+    padding:0 26.5px;
+    border-radius: 25px;
+    background: linear-gradient($color-secondary ,$color-primary);
+    color: white;
+    font-size: 0.96em;
+    font-weight: 400;
+    box-shadow: 0px 2px 8px #a3a2a2;
+    &:focus {
+        outline: none;
+    }
+}
+
+
+.likeButton {
+    font-size: 25px;
+}

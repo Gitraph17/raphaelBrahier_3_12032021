@@ -1,0 +1,18 @@
+{
+  "name": "raphaelbrahier_3_12032021",
+  "version": "1.0.0",
+  "description": "OpenClassRooms Parcours développeur Web Projet n°3: OhMyFood!",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./SASS/main.scss:PUBLIC/CSS/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "RaphaelBrahier_3_12032021"
+  },
+  "author": "Raphael Brahier",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.32.8"
+  }
+}

@@ -1,0 +1,15 @@
+.siteHeader {
+    @include flexCentering;
+    position: relative;
+    background-color: white;
+    &__logoTitle {
+        margin: 15px 0 5px 0;
+    }
+    &__button {
+        position: absolute;
+        left: 25px;
+        bottom: 20px;
+        color: #353535;
+        font-size: 1.2em;
+    }
+}

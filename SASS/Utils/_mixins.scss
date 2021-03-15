@@ -1,0 +1,32 @@
+@mixin titleTypo($font-size:2em){
+    font-family:"shrikhand";
+    font-weight: 300;
+    font-size: $font-size;
+  }
+
+@mixin flexCentering($flexDir:raw) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $flexDir;
+}
+
+@mixin mainBoxShadow {
+  box-shadow: 5px 5px 8px #e5e5e5;
+}
+
+@mixin resetLinkStyle {
+  color: inherit;
+  text-decoration: none;
+}
+@mixin mainBackgroundColor {
+  background-color: #f6f6f6;
+}
+
+@mixin contentBlocksCommonProperties($borderRadiusSize:25px){
+  width:90%; 
+  max-width: 450px;
+  border-radius: $borderRadiusSize;
+  @include mainBoxShadow;
+}
+

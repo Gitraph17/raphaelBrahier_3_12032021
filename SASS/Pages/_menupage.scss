@@ -1,0 +1,77 @@
+.blocMenuPage {
+    @include mainBackgroundColor
+}
+
+.restaurantImage {
+    width:100%;
+    max-width: 1300px;
+    height:250px;
+    object-fit: cover;
+    top:65px;
+}
+
+.restaurantMenu {
+    position: relative;
+    top:-55px;
+    @include mainBackgroundColor;
+    width: 100%;
+    max-width: 1300px;
+    border-radius: 40px 40px 0 0;
+    margin-bottom: 0;
+    & .restaurantMenuHeader {
+       @include titleTypo(1.1em);
+        margin: 10px 40px 0 20px;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+}
+
+.starters, .mainCourses, .desserts {
+    @include flexCentering(column);
+    margin-bottom: 25px;
+    &__headline {
+        align-self: flex-start;
+        margin: 10px 0px 10px 25px;
+        font-weight: 300;
+        &::after {
+            content:"";
+            display: block;
+            border-bottom: 3px solid $color-tertiary;
+            width: 40px;
+            padding-top: 5px;
+        }
+    }
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dish {
+    @include contentBlocksCommonProperties(15px);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-bottom: 12px;
+    &__title {
+        margin:12px 0 5px 15px;
+        font-size: 1.02em;
+        
+    }
+    &__details {
+        font-size: 0.85em;
+        margin:0px 0 5px 15px;
+    }
+    &__price {
+        margin:0px 25px 12px 15px;
+        color: #353535;
+        font-weight: 800;
+    }
+}
+
+.orderButton {
+    display: block;
+    margin:35px auto 10px auto;
+}

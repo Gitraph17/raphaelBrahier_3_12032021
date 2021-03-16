@@ -231,4 +231,89 @@ body {
   bottom: 30px;
 }
 
+.blocMenuPage {
+  background-color: #f6f6f6;
+}
+
+.restaurantImage {
+  width: 100%;
+  max-width: 1300px;
+  height: 250px;
+  object-fit: cover;
+  top: 65px;
+}
+
+.restaurantMenu {
+  position: relative;
+  top: -55px;
+  background-color: #f6f6f6;
+  width: 100%;
+  max-width: 1300px;
+  border-radius: 40px 40px 0 0;
+  margin-bottom: 0;
+}
+.restaurantMenu .restaurantMenuHeader {
+  font-family: "shrikhand";
+  font-weight: 300;
+  font-size: 1.1em;
+  margin: 10px 40px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.starters, .mainCourses, .desserts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+.starters__headline, .mainCourses__headline, .desserts__headline {
+  align-self: flex-start;
+  margin: 10px 0px 10px 25px;
+  font-weight: 300;
+}
+.starters__headline::after, .mainCourses__headline::after, .desserts__headline::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+  padding-top: 5px;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dish {
+  width: 90%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 8px #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 12px;
+}
+.dish__title {
+  margin: 12px 0 5px 15px;
+  font-size: 1.02em;
+}
+.dish__details {
+  font-size: 0.85em;
+  margin: 0px 0 5px 15px;
+}
+.dish__price {
+  margin: 0px 25px 12px 15px;
+  color: #353535;
+  font-weight: 800;
+}
+
+.orderButton {
+  display: block;
+  margin: 35px auto 10px auto;
+}
+
 /*# sourceMappingURL=style.css.map */

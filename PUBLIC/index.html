@@ -11,12 +11,12 @@
     <script src="https://kit.fontawesome.com/a7f7be9ef6.js" crossorigin="anonymous"></script>
     <title>Ohmyfood réservez le menu qui vous convient.</title>
 </head>
-
-<body>
     <div class="loadingSpinner">
-        <div class="loadingSpinner__logo"><img src="../images/logo/ohmyfood.svg"/></div>
+        <div class="loadingSpinner__logo">
+            <img src="../images/logo_et_icones/ohmyfood.svg"/>
+            <div class="loadingSpinner__hide"></div>
+        </div>
         <div class="loadingSpinner__paris">Paris</div>
-        <div class="loadingSpinner__hide"></div>
         <div class="loadingSpinner__icone"><i class="fas fa-utensils"></i></div>
     </div>
 
@@ -33,7 +33,7 @@
         <div class="presentation">
             <h2 class="presentation__headline">Réservez le menu qui vous convient</h2>
             <p class="presentation__subhead">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-            <button class="bicolorButton presentation__button" type="button">Explorer nos restaurants</button>
+            <a class="bicolorButton presentation__button" type="button" href="#restaurantsListAnchor">Explorer nos restaurants</a>
         </div>
 
         <div class="reservationProcess">
@@ -47,24 +47,25 @@
             <div class="reservationStep"> 
                 <div class="reservationStep__number">2</div>
                 <div class="reservationStep__icon"><i class="fas fa-list-ul"></i></div>
-                <h3 class="reservationStep__headline">Choisissez un restaurant</h3>
+                <h3 class="reservationStep__headline">Composez votre menu</h3>
             </div>
 
             <div class="reservationStep"> 
                 <div class="reservationStep__number">3</div>
                 <div class="reservationStep__icon reservationStep__icon--primaryColor"><i class="fas fa-store"></i></div>
-                <h3 class="reservationStep__headline">Choisissez un restaurant</h3>
+                <h3 class="reservationStep__headline">Dégustez au restaurant</h3>
             </div>
         </div>
 
-        <main class="restaurantsList">
+        <main class="restaurantsList" id="restaurantsListAnchor">
             <h2 class="restaurantsList__headline">Restaurants</h2>
             <a class="restaurantCard" href="la_palette_du-gout.html">
                 <article>
                     <img class="restaurantCard__image restaurantCard__image--positioning1" src="../images/restaurants/la_palette_du_gout.jpg" alt="Photo du restaurant La palette du goût" />
                     <h3 class="restaurantCard__headline">La palette du goût</h3>
                     <p class="restaurantCard__location">Ménilmontant</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i></div>
+                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i><img class="restaurantCard__likeButton--colored" src="../images/logo_et_icones/heart-solid.svg"/></div>
+                    <p class="restaurantCard__labelNew">Nouveau</p>
                 </article>
             </a>
 
@@ -73,7 +74,8 @@
                     <img class="restaurantCard__image restaurantCard__image--positioning2" src="../images/restaurants/la_note_enchantee.jpg" alt="Photo du restaurant La note enchantée" />
                     <h3 class="restaurantCard__headline">La note enchantée</h3>
                     <p class="restaurantCard__location">Charonne</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i></div>
+                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i><img class="restaurantCard__likeButton--colored" src="../images/logo_et_icones/heart-solid.svg"/></div>
+                    <p class="restaurantCard__labelNew">Nouveau</p>
                 </article>
             </a>    
 
@@ -82,7 +84,7 @@
                     <img class="restaurantCard__image restaurantCard__image--positioning1" src="../images/restaurants/a_la_française.jpg" alt="Photo du restaurant À la française" />
                     <h3 class="restaurantCard__headline">À la française</h3>
                     <p class="restaurantCard__location">Cité Rouge</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i></div>
+                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i><img class="restaurantCard__likeButton--colored" src="../images/logo_et_icones/heart-solid.svg"/></div>
                 </article>
             </a>
 
@@ -91,7 +93,7 @@
                     <img class="restaurantCard__image restaurantCard__image--positioning1" src="../images/restaurants/le_delice_des_sens.jpg" alt="Photo du restaurant Le délice des sens" />
                     <h3 class="restaurantCard__headline">Le délice des sens</h3>
                     <p class="restaurantCard__location">Folie-Méricourt</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i></div>
+                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i><img class="restaurantCard__likeButton--colored" src="../images/logo_et_icones/heart-solid.svg"/></div>
                 </article>
             </a>    
         </main>

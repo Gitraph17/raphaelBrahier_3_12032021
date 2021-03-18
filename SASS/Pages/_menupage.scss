@@ -24,12 +24,35 @@
         display: flex;
         justify-content:space-between;
         align-items: center;
+        &__likeButton {
+            @include flexCentering;
+            &:hover {
+                cursor: pointer;
+            }
+            &:hover .fa-heart{
+                transform: scale(0.87);
+                transition: transform 0.05s 0.45s ease-in-out;
+            }
+            &:hover .restaurantCard__likeButton--colored{
+                transform:scale(1.02)
+            }
+            &--colored {
+                width: 25px;
+                height: 25px;
+                transform: scale(0);
+                transition: transform 0.5s ease-in-out;
+                transform-origin: 50% 50%;
+            }
+        }
     }
-}
+}  
 
 .starters, .mainCourses, .desserts {
     @include flexCentering(column);
     margin-bottom: 25px;
+    transform:translateY(50px);
+    opacity:0;
+    animation: dishAppearance 1s forwards;
     &__headline {
         align-self: flex-start;
         margin: 10px 0px 10px 25px;
@@ -44,6 +67,30 @@
     }
 }
 
+.starters {
+    animation-delay: 0.4s;
+}
+
+.mainCourses {
+    animation-delay: 1s;
+}
+
+.desserts {
+    animation-delay: 1.6s;
+}
+
+
+@keyframes dishAppearance{
+    0%   {
+        transform:translateY(50px);
+        opacity: 0;
+    }
+    100% { 
+        transform:translateY(0);
+        opacity: 1;
+    }
+}
+
 .flexContainer {
     display: flex;
     justify-content: space-between;
@@ -51,23 +98,71 @@
 
 .dish {
     @include contentBlocksCommonProperties(15px);
-    display: flex;
-    flex-direction: column;
     background-color: white;
     margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+    &__selector {
+        @include flexCentering;
+        position: absolute;
+        width:60px;
+        height:100%;
+        transform:translateX(60px);
+        right:0;
+        top:0;
+        background-color: $color-tertiary;
+        border-radius: 0 15px 15px 0;
+        transition: transform 1s ease;
+        transform-origin: 100% 50%;
+        & .fa-check-circle {
+            font-size: 20px;
+            color:white;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover .fa-check-circle {
+        transform: rotate(360deg);
+        transition: transform 0.7s 0.1s ease;
+    }
+    &:hover .dish__price{
+        transform: translateX(-50px);
+        display: block;
+    }
+    &:hover .dish__selector {
+        transform:translateX(0);
+    }
+    &:hover .dish__details {
+        width: calc(75% - 60px);
+    }
+    &:hover .dish__title {
+        width: calc(85% - 50px);
+    }
     &__title {
+        width: 85%;
         margin:12px 0 5px 15px;
         font-size: 1.02em;
-        
+        transition: all 1s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__details {
+        width: 75%;
         font-size: 0.85em;
         margin:0px 0 5px 15px;
+        transition: all 1s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__price {
+        display: block;
         margin:0px 25px 12px 15px;
         color: #353535;
         font-weight: 800;
+        transition: transform 1s ease;
     }
 }
 

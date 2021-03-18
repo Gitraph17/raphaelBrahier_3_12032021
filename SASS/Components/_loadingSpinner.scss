@@ -1,7 +1,7 @@
 .loadingSpinner {
     @include flexCentering(column);
     width:100%;
-    height: 80%;
+    height: 80vh;
     position: absolute;
     animation: disappear 0.8s 3s forwards;
     &__icone {
@@ -9,6 +9,7 @@
         transform: rotate(0deg);
         animation: rotation ease-in 2.35s;
         margin-top: 15px;
+        position: relative;
     }
     &__paris {
         font-size: 1.07em;
@@ -16,11 +17,14 @@
         opacity: 0;
         animation: scale linear 0.3s 2.35s forwards;
     }
+    &__logo{
+        position: relative;
+    }
     &__hide {
         width:100%;
-        height:88px;
+        height:100%;
         position: absolute;
-        top:41.5%;
+        top:0;
         background-color:white;
         animation: color ease-in 2.35s forwards;
     }
@@ -69,14 +73,16 @@
         transform: translateY(40px);
     }
     100% { 
-        transform: translateY(88px);
+        transform: translateY(80px);
     }
 }
 
 
-.blocPage {
+.blocPage{
+    &__animation {
     opacity:0;
     animation: appear 0.8s 3.4s forwards;
+    }
 }
 
 

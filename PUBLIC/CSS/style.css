@@ -26,12 +26,17 @@ body {
   border-radius: 25px;
   background: linear-gradient(#FF79DA, #9356DC);
   color: white;
-  font-size: 0.96em;
+  font-size: 1em;
   font-weight: 400;
   box-shadow: 0px 2px 8px #a3a2a2;
 }
 .bicolorButton:focus {
   outline: none;
+}
+.bicolorButton:hover {
+  cursor: pointer;
+  background: linear-gradient(#ff98e2, #a36fe1);
+  box-shadow: 2px 4px 9px #807f7f;
 }
 
 .likeButton {
@@ -44,7 +49,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 80%;
+  height: 80vh;
   position: absolute;
   animation: disappear 0.8s 3s forwards;
 }
@@ -53,6 +58,7 @@ body {
   transform: rotate(0deg);
   animation: rotation ease-in 2.35s;
   margin-top: 15px;
+  position: relative;
 }
 .loadingSpinner__paris {
   font-size: 1.07em;
@@ -60,11 +66,14 @@ body {
   opacity: 0;
   animation: scale linear 0.3s 2.35s forwards;
 }
+.loadingSpinner__logo {
+  position: relative;
+}
 .loadingSpinner__hide {
   width: 100%;
-  height: 88px;
+  height: 100%;
   position: absolute;
-  top: 41.5%;
+  top: 0;
   background-color: white;
   animation: color ease-in 2.35s forwards;
 }
@@ -111,10 +120,10 @@ body {
     transform: translateY(40px);
   }
   100% {
-    transform: translateY(88px);
+    transform: translateY(80px);
   }
 }
-.blocPage {
+.blocPage__animation {
   opacity: 0;
   animation: appear 0.8s 3.4s forwards;
 }
@@ -229,6 +238,9 @@ body {
 }
 .presentation__button {
   margin: 15px 0;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 50px;
 }
 
 .reservationProcess {
@@ -303,6 +315,24 @@ body {
   margin-bottom: 15px;
   position: relative;
   background-color: white;
+  transition: transform 0.3s;
+}
+.restaurantCard:hover {
+  transform: scale(1.03);
+}
+.restaurantCard__labelNew {
+  color: #008766;
+  display: block;
+  width: 80px;
+  height: 29px;
+  background-color: #99E2D0;
+  position: absolute;
+  top: 0;
+  right: 16px;
+  text-align: center;
+  line-height: 29px;
+  border-radius: 3px;
+  font-weight: 500;
 }
 .restaurantCard__image {
   width: 100%;
@@ -323,9 +353,28 @@ body {
   margin: 0 0 15px 15px;
 }
 .restaurantCard__likeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: raw;
   position: absolute;
   right: 25px;
   bottom: 30px;
+}
+.restaurantCard__likeButton:hover .fa-heart {
+  transform: scale(0.8) rotate(0.01deg);
+  transition: transform 0.1s 0.4s ease-in-out;
+}
+.restaurantCard__likeButton:hover .restaurantCard__likeButton--colored {
+  transform: scale(1.02) rotate(0.01deg);
+}
+.restaurantCard__likeButton--colored {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: 50% 50%;
 }
 
 .blocMenuPage {
@@ -358,6 +407,29 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.restaurantMenu .restaurantMenuHeader__likeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: raw;
+}
+.restaurantMenu .restaurantMenuHeader__likeButton:hover {
+  cursor: pointer;
+}
+.restaurantMenu .restaurantMenuHeader__likeButton:hover .fa-heart {
+  transform: scale(0.87);
+  transition: transform 0.05s 0.45s ease-in-out;
+}
+.restaurantMenu .restaurantMenuHeader__likeButton:hover .restaurantCard__likeButton--colored {
+  transform: scale(1.02);
+}
+.restaurantMenu .restaurantMenuHeader__likeButton--colored {
+  width: 25px;
+  height: 25px;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: 50% 50%;
+}
 
 .starters, .mainCourses, .desserts {
   display: flex;
@@ -365,6 +437,9 @@ body {
   align-items: center;
   flex-direction: column;
   margin-bottom: 25px;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: dishAppearance 1s forwards;
 }
 .starters__headline, .mainCourses__headline, .desserts__headline {
   align-self: flex-start;
@@ -379,6 +454,28 @@ body {
   padding-top: 5px;
 }
 
+.starters {
+  animation-delay: 0.4s;
+}
+
+.mainCourses {
+  animation-delay: 1s;
+}
+
+.desserts {
+  animation-delay: 1.6s;
+}
+
+@keyframes dishAppearance {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .flexContainer {
   display: flex;
   justify-content: space-between;
@@ -389,23 +486,75 @@ body {
   max-width: 450px;
   border-radius: 15px;
   box-shadow: 5px 5px 8px #e5e5e5;
-  display: flex;
-  flex-direction: column;
   background-color: white;
   margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.dish__selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: raw;
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  transform: translateX(60px);
+  right: 0;
+  top: 0;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  transition: transform 1s ease;
+  transform-origin: 100% 50%;
+}
+.dish__selector .fa-check-circle {
+  font-size: 20px;
+  color: white;
+}
+.dish:hover {
+  cursor: pointer;
+}
+.dish:hover .fa-check-circle {
+  transform: rotate(360deg);
+  transition: transform 0.7s 0.1s ease;
+}
+.dish:hover .dish__price {
+  transform: translateX(-50px);
+  display: block;
+}
+.dish:hover .dish__selector {
+  transform: translateX(0);
+}
+.dish:hover .dish__details {
+  width: calc(75% - 60px);
+}
+.dish:hover .dish__title {
+  width: calc(85% - 50px);
 }
 .dish__title {
+  width: 85%;
   margin: 12px 0 5px 15px;
   font-size: 1.02em;
+  transition: all 1s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .dish__details {
+  width: 75%;
   font-size: 0.85em;
   margin: 0px 0 5px 15px;
+  transition: all 1s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .dish__price {
+  display: block;
   margin: 0px 25px 12px 15px;
   color: #353535;
   font-weight: 800;
+  transition: transform 1s ease;
 }
 
 .orderButton {

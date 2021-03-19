@@ -5,4 +5,7 @@ body {
 
 .title {
     @include titleTypo;
+@media screen and (min-width:767px) {
+    font-size: 3em;
+    }
 }

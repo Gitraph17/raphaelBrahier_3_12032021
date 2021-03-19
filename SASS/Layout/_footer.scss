@@ -1,14 +1,15 @@
 .siteFooter {
     background-color:#353535;
     color:white;
-    @include flexCentering;
     padding:10px 0 25px 0;
     & .footerMenu{
-        width:85%;
-        max-width: 450px;
+        margin-left: 25px;
         &__headline {
             @include titleTypo;
             width: 150px;
+        }
+        @media screen and (min-width:500px) {
+            font-size: 1.2em;
         }
     }
 }

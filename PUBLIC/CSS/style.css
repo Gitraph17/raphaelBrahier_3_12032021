@@ -17,6 +17,11 @@ body {
   font-weight: 300;
   font-size: 2em;
 }
+@media screen and (min-width: 767px) {
+  .title {
+    font-size: 3em;
+  }
+}
 
 .bicolorButton {
   border: none;
@@ -166,21 +171,21 @@ body {
 .siteFooter {
   background-color: #353535;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: raw;
   padding: 10px 0 25px 0;
 }
 .siteFooter .footerMenu {
-  width: 85%;
-  max-width: 450px;
+  margin-left: 25px;
 }
 .siteFooter .footerMenu__headline {
   font-family: "shrikhand";
   font-weight: 300;
   font-size: 2em;
   width: 150px;
+}
+@media screen and (min-width: 500px) {
+  .siteFooter .footerMenu {
+    font-size: 1.2em;
+  }
 }
 
 .footerNavList {
@@ -221,11 +226,26 @@ body {
   margin: 0 20px;
   font-weight: 600;
 }
+@media screen and (min-width: 767px) {
+  .localisation {
+    font-size: 1.15em;
+  }
+}
 
 .presentation {
   background-color: #f6f6f6;
   padding: 40px;
   text-align: center;
+}
+@media screen and (min-width: 767px) {
+  .presentation {
+    position: relative;
+  }
+}
+@media screen and (min-width: 767px) {
+  .presentation .textContainer {
+    margin-right: 30px;
+  }
 }
 .presentation__headline {
   margin: 0;
@@ -241,6 +261,22 @@ body {
   display: inline-block;
   text-decoration: none;
   line-height: 50px;
+  white-space: nowrap;
+}
+@media screen and (min-width: 767px) {
+  .presentation__button {
+    min-width: 200px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .presentation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-size: 1.2em;
+    padding-left: 25px;
+  }
 }
 
 .reservationProcess {
@@ -249,9 +285,24 @@ body {
   align-items: center;
   flex-direction: column;
   padding-bottom: 30px;
+  margin: auto 25px;
+  align-items: flex-end;
 }
 .reservationProcess__headline {
-  width: 90%;
+  width: 100%;
+}
+@media screen and (min-width: 767px) {
+  .reservationProcess {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 1.1em;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .reservationProcess {
+    justify-content: center;
+  }
 }
 
 .reservationStep {
@@ -259,14 +310,15 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: raw;
-  width: 90%;
-  max-width: 450px;
+  width: 100%;
   border-radius: 25px;
   box-shadow: 5px 5px 8px #e5e5e5;
   background-color: #f6f6f6;
   height: 75px;
-  margin: 20px 0 20px 5px;
+  margin: 20px 0;
+  width: calc(100% - 12.5px);
   position: relative;
+  cursor: pointer;
 }
 .reservationStep__number {
   background-color: #9356DC;
@@ -284,38 +336,65 @@ body {
   color: #7e7e7e;
   margin-left: 10px;
 }
-.reservationStep__icon--primaryColor {
-  color: #9356DC;
-}
 .reservationStep__headline {
   margin-left: 20px;
 }
+.reservationStep:hover .reservationStep__icon {
+  color: #9356DC;
+}
+@media screen and (min-width: 767px) {
+  .reservationStep {
+    width: 28.5%;
+    min-width: 300px;
+    margin: 15px 0 15px 12.5px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .reservationStep {
+    width: 44%;
+    margin: 15px 20px;
+  }
+}
 
 .restaurantsList {
-  width: 100%;
+  width: calc(100% - 50px);
   margin: 0 auto;
   background-color: #f6f6f6;
-  padding: 30px 0;
+  padding: 30px 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 .restaurantsList__headline {
-  width: 90%;
+  width: 100%;
+}
+@media screen and (min-width: 767px) {
+  .restaurantsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 1.1em;
+  }
 }
 
 .restaurantCard {
   color: inherit;
   text-decoration: none;
-  width: 90%;
-  max-width: 450px;
+  width: 100%;
   border-radius: 25px;
   box-shadow: 5px 5px 8px #e5e5e5;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   position: relative;
   background-color: white;
   transition: transform 0.3s;
+}
+@media screen and (min-width: 767px) {
+  .restaurantCard {
+    margin: 30px 0 15px 0px;
+    width: 47%;
+    max-width: 600px;
+  }
 }
 .restaurantCard:hover {
   transform: scale(1.03);
@@ -343,8 +422,18 @@ body {
 .restaurantCard__image--positioning1 {
   object-position: 50% 95%;
 }
+@media screen and (min-width: 490px) and (max-width: 767px) {
+  .restaurantCard__image--positioning1 {
+    object-position: 50% 70%;
+  }
+}
 .restaurantCard__image--positioning2 {
   object-position: 50% 61%;
+}
+@media screen and (min-width: 768px) {
+  .restaurantCard__image {
+    height: 220px;
+  }
 }
 .restaurantCard__headline {
   margin: 12px 0 5px 15px;
@@ -398,11 +487,16 @@ body {
   border-radius: 40px 40px 0 0;
   margin-bottom: 0;
 }
+@media screen and (min-width: 500px) {
+  .restaurantMenu {
+    font-size: 1.1em;
+  }
+}
 .restaurantMenu .restaurantMenuHeader {
   font-family: "shrikhand";
   font-weight: 300;
   font-size: 1.1em;
-  margin: 10px 40px 0 20px;
+  margin: 10px 40px 0 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -436,14 +530,23 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 25px;
+  align-items: flex-start;
+  margin: 0 25px 25px 25px;
   transform: translateY(50px);
   opacity: 0;
   animation: dishAppearance 1s forwards;
 }
+@media screen and (min-width: 767px) {
+  .starters, .mainCourses, .desserts {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+}
 .starters__headline, .mainCourses__headline, .desserts__headline {
   align-self: flex-start;
-  margin: 10px 0px 10px 25px;
+  margin: 10px 0;
   font-weight: 300;
 }
 .starters__headline::after, .mainCourses__headline::after, .desserts__headline::after {
@@ -452,6 +555,11 @@ body {
   border-bottom: 3px solid #99E2D0;
   width: 40px;
   padding-top: 5px;
+}
+@media screen and (min-width: 767px) {
+  .starters__headline, .mainCourses__headline, .desserts__headline {
+    width: 100%;
+  }
 }
 
 .starters {
@@ -482,14 +590,25 @@ body {
 }
 
 .dish {
-  width: 90%;
-  max-width: 450px;
+  width: 100%;
   border-radius: 15px;
   box-shadow: 5px 5px 8px #e5e5e5;
   background-color: white;
   margin-bottom: 12px;
   position: relative;
   overflow: hidden;
+  width: 100%;
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .dish {
+    width: 49%;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .dish {
+    width: 32.5%;
+  }
 }
 .dish__selector {
   display: flex;
@@ -536,18 +655,18 @@ body {
   margin: 12px 0 5px 15px;
   font-size: 1.02em;
   transition: all 1s ease;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .dish__details {
   width: 75%;
   font-size: 0.85em;
   margin: 0px 0 5px 15px;
   transition: all 1s ease;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .dish__price {
   display: block;

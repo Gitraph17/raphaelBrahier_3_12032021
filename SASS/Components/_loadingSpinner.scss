@@ -1,44 +1,22 @@
-.loadingSpinner {
-    @include flexCentering(column);
-    width:100%;
-    height: 80vh;
-    position: absolute;
-    animation: disappear 0.8s 3s forwards;
-    &__icone {
-        font-size: 1.3em;
-        transform: rotate(0deg);
-        animation: rotation ease-in 2.35s;
-        margin-top: 15px;
-        position: relative;
-    }
-    &__paris {
-        font-size: 1.07em;
-        font-family: "raleway";
-        opacity: 0;
-        animation: scale linear 0.3s 2.35s forwards;
-    }
-    &__logo{
-        position: relative;
-    }
-    &__hide {
-        width:100%;
-        height:100%;
-        position: absolute;
-        top:0;
-        background-color:white;
-        animation: color ease-in 2.35s forwards;
-    }
+@keyframes appear {
+    from   {
+        opacity:0; 
 }
-@keyframes scale {
-    0%   {
-        opacity:(0);
-    }
-    100% { 
-        opacity:(1);
+    to { 
+        opacity:1; 
     }
 }
 
-@keyframes rotation {
+@keyframes disappear {
+    from   {
+        opacity:1; 
+}
+    to { 
+        opacity:0; 
+    }
+}
+
+@keyframes rotation360 {
     0%   {
         transform: rotate(0deg);
     }
@@ -56,7 +34,7 @@
     }
 }
 
-@keyframes color {
+@keyframes hidingBlockVerticalTranslation {
     0%   {
         transform: translateY(0); 
     }
@@ -77,29 +55,46 @@
     }
 }
 
-
-.blocPage{
-    &__animation {
+.homePageBlocPage{
     opacity:0;
-    animation: appear 0.8s 3.4s forwards;
+    animation: appear 0.5s 3.4s forwards;
+}
+.loadingSpinner {
+    @include flexCentering(column);
+    width:100%;
+    height: 80vh;
+    position: absolute;
+    animation: disappear 0.5s 3s forwards;
+    &__icon {
+        transform: rotate(0deg);
+        animation: rotation360 ease-in 2.35s;
     }
-}
-
-
-@keyframes appear {
-    from   {
-        opacity:0; 
-}
-    to { 
-        opacity:1; 
+    &__paris {
+        font-family: "raleway", "Roboto", "sans-serif";
+        opacity: 0;
+        animation: appear linear 0.3s 2.35s forwards;
+        margin-top: 5px;
     }
-}
-
-@keyframes disappear {
-    from   {
-        opacity:1; 
-}
-    to { 
-        opacity:0; 
+    &__logo{
+        position: relative;
+        &::after { /**Ce bloque masque le logo puis le laisse apparaitre progressivement**/
+            content: "";
+            display: block;
+            height:48px;
+            width:280px;
+            position:absolute;
+            top:0;
+            background-color: white;
+            animation: hidingBlockVerticalTranslation ease-in 2.35s forwards;
+            @media screen and (min-width:767px) {
+                width:110%;
+                height:110%;
+            }
+        }
+        & > img {
+            @media screen and (min-width:767px) {
+                width:340px;
+            }
+        }
     }
 }

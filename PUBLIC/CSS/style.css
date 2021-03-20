@@ -1,97 +1,70 @@
+@charset "UTF-8";
 body {
   margin: 0;
 }
 
 .blocPage {
   max-width: 1300px;
-  margin: 0 auto;
+  margin: auto;
 }
 
-body {
-  font-family: "Roboto";
-  font-size: 16px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.title {
-  font-family: "shrikhand";
-  font-weight: 300;
-  font-size: 2em;
-}
-@media screen and (min-width: 767px) {
-  .title {
-    font-size: 3em;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.bicolorButton {
+button {
+  font: unset;
   border: none;
-  height: 50px;
-  min-width: 185px;
-  padding: 0 26.5px;
-  border-radius: 25px;
-  background: linear-gradient(#FF79DA, #9356DC);
-  color: white;
-  font-size: 1em;
-  font-weight: 400;
-  box-shadow: 0px 2px 8px #a3a2a2;
 }
-.bicolorButton:focus {
+button:focus {
   outline: none;
 }
-.bicolorButton:hover {
-  cursor: pointer;
-  background: linear-gradient(#ff98e2, #a36fe1);
-  box-shadow: 2px 4px 9px #807f7f;
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+@media screen and (min-width: 767px) {
+  html {
+    font-size: 17.6px;
+  }
 }
 
-.likeButton {
-  font-size: 25px;
+.logo {
+  font-family: "shrikhand";
+  font-weight: 300;
+  font-size: 2rem;
 }
 
-.loadingSpinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 80vh;
-  position: absolute;
-  animation: disappear 0.8s 3s forwards;
-}
-.loadingSpinner__icone {
-  font-size: 1.3em;
-  transform: rotate(0deg);
-  animation: rotation ease-in 2.35s;
-  margin-top: 15px;
-  position: relative;
-}
-.loadingSpinner__paris {
-  font-size: 1.07em;
-  font-family: "raleway";
-  opacity: 0;
-  animation: scale linear 0.3s 2.35s forwards;
-}
-.loadingSpinner__logo {
-  position: relative;
-}
-.loadingSpinner__hide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  background-color: white;
-  animation: color ease-in 2.35s forwards;
+/** Font-size par défaut des îcones font awesome **/
+.fas,
+.far {
+  font-size: 1.25rem;
 }
 
-@keyframes scale {
-  0% {
+@keyframes appear {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
-@keyframes rotation {
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes rotation360 {
   0% {
     transform: rotate(0deg);
   }
@@ -108,7 +81,7 @@ body {
     transform: rotate(360deg);
   }
 }
-@keyframes color {
+@keyframes hidingBlockVerticalTranslation {
   0% {
     transform: translateY(0);
   }
@@ -128,154 +101,382 @@ body {
     transform: translateY(80px);
   }
 }
-.blocPage__animation {
+.homePageBlocPage {
   opacity: 0;
-  animation: appear 0.8s 3.4s forwards;
+  animation: appear 0.5s 3.4s forwards;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+.loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  position: absolute;
+  animation: disappear 0.5s 3s forwards;
+}
+.loadingSpinner__icon {
+  transform: rotate(0deg);
+  animation: rotation360 ease-in 2.35s;
+}
+.loadingSpinner__paris {
+  font-family: "raleway", "Roboto", "sans-serif";
+  opacity: 0;
+  animation: appear linear 0.3s 2.35s forwards;
+  margin-top: 5px;
+}
+.loadingSpinner__logo {
+  position: relative;
+}
+.loadingSpinner__logo::after {
+  /**Ce bloque masque le logo puis le laisse apparaitre progressivement**/
+  content: "";
+  display: block;
+  height: 48px;
+  width: 280px;
+  position: absolute;
+  top: 0;
+  background-color: white;
+  animation: hidingBlockVerticalTranslation ease-in 2.35s forwards;
+}
+@media screen and (min-width: 767px) {
+  .loadingSpinner__logo::after {
+    width: 110%;
+    height: 110%;
   }
 }
-@keyframes disappear {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
+@media screen and (min-width: 767px) {
+  .loadingSpinner__logo > img {
+    width: 340px;
   }
 }
+
+.bicolorButton {
+  text-align: center;
+  height: 50px;
+  min-width: 185px;
+  padding: 0 26.5px;
+  border-radius: 25px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  box-shadow: 0px 2px 8px #a3a2a2;
+  white-space: nowrap;
+}
+.bicolorButton:hover {
+  cursor: pointer;
+  background: linear-gradient(#ff98e2, #a36fe1);
+  box-shadow: 2px 4px 9px #807f7f;
+}
+
+.likeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1.5625rem;
+}
+.likeButton > .purpleHeartIcon {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: 50% 50%;
+}
+.likeButton:hover {
+  cursor: pointer;
+}
+.likeButton:hover > .heartIcon {
+  transform: scale(0.87);
+  transition: transform 0.05s 0.45s ease-in-out;
+}
+.likeButton:hover > .purpleHeartIcon {
+  transform: scale(1.02) rotate(0.01deg);
+  /**L'ajout de cette minuscule rotation invisible à l'oeil permet de réduire les risques d'un mauvais rendu de l'animation sur le navigateur Firefox. **/
+}
+
+/**Ce partiel contient la mise en forme de l'étiquette "Nouveau" (labelNew) affichée sur les cards des restaurants 
+de la home-page**/
+.label {
+  width: 80px;
+  height: 29px;
+  border-radius: 3px;
+  background-color: #99E2D0;
+  color: #008766;
+  text-align: center;
+  line-height: 29px;
+  font-weight: 500;
+}
+
 .siteHeader {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: raw;
-  position: relative;
+  flex-direction: row;
   background-color: white;
+  padding: 10px 20px 5px 20px;
 }
-.siteHeader__logoTitle {
-  margin: 15px 0 5px 0;
+.siteHeader__logo {
+  margin: auto;
+  font-size: 2rem;
+}
+@media screen and (min-width: 767px) {
+  .siteHeader__logo {
+    font-size: 2.5rem;
+  }
 }
 .siteHeader__button {
-  position: absolute;
-  left: 25px;
-  bottom: 20px;
   color: #353535;
-  font-size: 1.2em;
+  margin-right: -17.5px;
+  /**marge négative de la largeur du bouton pour un centrage horizontale exacte du logo**/
 }
 
-.siteFooter {
-  background-color: #353535;
-  color: white;
-  padding: 10px 0 25px 0;
+.bannerPicture {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
-.siteFooter .footerMenu {
-  margin-left: 25px;
-}
-.siteFooter .footerMenu__headline {
-  font-family: "shrikhand";
-  font-weight: 300;
-  font-size: 2em;
-  width: 150px;
-}
-@media screen and (min-width: 500px) {
-  .siteFooter .footerMenu {
-    font-size: 1.2em;
+@media screen and (min-width: 768px) {
+  .bannerPicture {
+    height: 350px;
   }
 }
 
-.footerNavList {
-  list-style-type: none;
-  padding: 0;
+.restaurantMenu {
+  position: relative;
+  top: -55px;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
 }
-.footerNavList__link {
-  color: inherit;
-  text-decoration: none;
+.restaurantMenu .restaurantMenuHeader {
+  font-family: "shrikhand";
+  font-weight: 300;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 40px 0 20px;
+  padding-top: 10px;
 }
-.footerNavList__item {
+.restaurantMenu .restaurantMenuHeader__headline {
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+@keyframes dishAppearance {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.starters, .mainCourses, .desserts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20px 20px 20px;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: dishAppearance 1s forwards;
+}
+.starters__headline, .mainCourses__headline, .desserts__headline {
+  font-weight: 400;
+  font-size: 1rem;
+  align-self: flex-start;
+  margin: 10px 0;
+}
+.starters__headline::after, .mainCourses__headline::after, .desserts__headline::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+  padding-top: 5px;
+}
+@media screen and (min-width: 767px) {
+  .starters__headline, .mainCourses__headline, .desserts__headline {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 767px) {
+  .starters, .mainCourses, .desserts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.starters {
+  animation-delay: 0.4s;
+}
+
+.mainCourses {
+  animation-delay: 1s;
+}
+
+.desserts {
+  animation-delay: 1.6s;
+}
+
+.dish {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 5px 5px 8px #e5e5e5;
+  background-color: white;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .dish {
+    width: 49%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .dish {
+    width: 32.5%;
+  }
+}
+.dish > .dishInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.dish__title {
+  font-size: 1.05rem;
+  width: 85%;
+  margin: 12px 0 5px 15px;
+  transition: all 1s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dish__details {
+  font-size: 0.88rem;
+  width: 75%;
+  margin: 0px 0 5px 15px;
+  transition: all 1s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dish__price {
+  font-weight: bold;
+  margin: 0px 20px 12px 15px;
+  color: #353535;
+  transition: transform 1s ease;
+}
+.dish__selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  transform: translateX(60px);
+  background-color: #99E2D0;
+  transition: transform 1s ease;
+  transform-origin: 100% 50%;
+}
+.dish__selector .checkIcon {
+  color: white;
+}
+.dish:hover {
+  cursor: pointer;
+}
+.dish:hover .checkIcon {
+  transform: rotate(360deg);
+  transition: transform 0.7s 0.1s ease;
+}
+.dish:hover .dish__price {
+  transform: translateX(-50px);
+}
+.dish:hover .dish__selector {
+  transform: translateX(0);
+}
+.dish:hover .dish__details {
+  width: calc(75% - 60px);
+}
+.dish:hover .dish__title {
+  width: calc(85% - 50px);
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 20px;
+}
+footer .footerNavList__logo {
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 767px) {
+  footer .footerNavList__logo {
+    font-size: 1.5rem;
+  }
+}
+footer .footerNavList__item {
   padding-bottom: 10px;
 }
-.footerNavList__icone {
+footer .footerNavList__icone {
+  font-size: 0.8rem;
   width: 10px;
-  margin-right: 20px;
+  margin-right: 12px;
 }
 
 .localisation {
   height: 50px;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: raw;
+  flex-direction: row;
   color: #353535;
   background-color: #eaeaea;
   box-shadow: inset 0 4px 4px #cecece;
 }
-.localisation__icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: raw;
-  font-size: 18px;
-}
 .localisation__place {
   margin: 0 20px;
-  font-weight: 600;
-}
-@media screen and (min-width: 767px) {
-  .localisation {
-    font-size: 1.15em;
-  }
 }
 
 .presentation {
   background-color: #f6f6f6;
-  padding: 40px;
   text-align: center;
-}
-@media screen and (min-width: 767px) {
-  .presentation {
-    position: relative;
-  }
-}
-@media screen and (min-width: 767px) {
-  .presentation .textContainer {
-    margin-right: 30px;
-  }
+  padding: 40px;
 }
 .presentation__headline {
-  margin: 0;
-  font-size: 1.6em;
-  font-weight: 800;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 .presentation__subhead {
-  font-weight: 400;
   color: #353535;
 }
 .presentation__button {
-  margin: 15px 0;
   display: inline-block;
+  margin: 15px 0;
   text-decoration: none;
   line-height: 50px;
-  white-space: nowrap;
 }
 @media screen and (min-width: 767px) {
   .presentation__button {
-    min-width: 200px;
+    min-width: 220px;
   }
 }
 @media screen and (min-width: 767px) {
   .presentation {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    font-size: 1.2em;
-    padding-left: 25px;
+    padding-left: 20px;
   }
 }
 
@@ -284,19 +485,19 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 30px;
-  margin: auto 25px;
+  margin: 40px 20px;
   align-items: flex-end;
 }
 .reservationProcess__headline {
   width: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 767px) {
   .reservationProcess {
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
-    font-size: 1.1em;
+    flex-wrap: wrap;
   }
 }
 @media screen and (min-width: 767px) and (max-width: 1024px) {
@@ -309,7 +510,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: raw;
+  flex-direction: row;
   width: 100%;
   border-radius: 25px;
   box-shadow: 5px 5px 8px #e5e5e5;
@@ -332,20 +533,22 @@ body {
   left: -12.5px;
 }
 .reservationStep__icon {
-  font-size: 18px;
   color: #7e7e7e;
-  margin-left: 10px;
+  margin: 0 5%;
 }
 .reservationStep__headline {
-  margin-left: 20px;
+  width: 209px;
+  white-space: nowrap;
 }
-.reservationStep:hover .reservationStep__icon {
+.reservationStep:hover {
+  cursor: pointer;
+}
+.reservationStep:hover > .reservationStep__icon {
   color: #9356DC;
 }
 @media screen and (min-width: 767px) {
   .reservationStep {
     width: 28.5%;
-    min-width: 300px;
     margin: 15px 0 15px 12.5px;
   }
 }
@@ -357,24 +560,24 @@ body {
 }
 
 .restaurantsList {
-  width: calc(100% - 50px);
-  margin: 0 auto;
   background-color: #f6f6f6;
-  padding: 30px 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: calc(100% - 40px);
+  padding: 30px 20px;
 }
 .restaurantsList__headline {
   width: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 767px) {
   .restaurantsList {
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
-    font-size: 1.1em;
+    flex-wrap: wrap;
   }
 }
 
@@ -393,25 +596,12 @@ body {
   .restaurantCard {
     margin: 30px 0 15px 0px;
     width: 47%;
-    max-width: 600px;
   }
 }
-.restaurantCard:hover {
-  transform: scale(1.03);
-}
 .restaurantCard__labelNew {
-  color: #008766;
-  display: block;
-  width: 80px;
-  height: 29px;
-  background-color: #99E2D0;
   position: absolute;
   top: 0;
   right: 16px;
-  text-align: center;
-  line-height: 29px;
-  border-radius: 3px;
-  font-weight: 500;
 }
 .restaurantCard__image {
   width: 100%;
@@ -442,238 +632,16 @@ body {
   margin: 0 0 15px 15px;
 }
 .restaurantCard__likeButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: raw;
   position: absolute;
   right: 25px;
   bottom: 30px;
 }
-.restaurantCard__likeButton:hover .fa-heart {
-  transform: scale(0.8) rotate(0.01deg);
-  transition: transform 0.1s 0.4s ease-in-out;
-}
-.restaurantCard__likeButton:hover .restaurantCard__likeButton--colored {
-  transform: scale(1.02) rotate(0.01deg);
-}
-.restaurantCard__likeButton--colored {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  transform: scale(0);
-  transition: transform 0.5s ease-in-out;
-  transform-origin: 50% 50%;
+.restaurantCard:hover {
+  transform: scale(1.03);
 }
 
-.blocMenuPage {
+.restaurantMenuBlocPage {
   background-color: #f6f6f6;
-}
-
-.restaurantImage {
-  width: 100%;
-  max-width: 1300px;
-  height: 250px;
-  object-fit: cover;
-  top: 65px;
-}
-
-.restaurantMenu {
-  position: relative;
-  top: -55px;
-  background-color: #f6f6f6;
-  width: 100%;
-  max-width: 1300px;
-  border-radius: 40px 40px 0 0;
-  margin-bottom: 0;
-}
-@media screen and (min-width: 500px) {
-  .restaurantMenu {
-    font-size: 1.1em;
-  }
-}
-.restaurantMenu .restaurantMenuHeader {
-  font-family: "shrikhand";
-  font-weight: 300;
-  font-size: 1.1em;
-  margin: 10px 40px 0 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.restaurantMenu .restaurantMenuHeader__likeButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: raw;
-}
-.restaurantMenu .restaurantMenuHeader__likeButton:hover {
-  cursor: pointer;
-}
-.restaurantMenu .restaurantMenuHeader__likeButton:hover .fa-heart {
-  transform: scale(0.87);
-  transition: transform 0.05s 0.45s ease-in-out;
-}
-.restaurantMenu .restaurantMenuHeader__likeButton:hover .restaurantCard__likeButton--colored {
-  transform: scale(1.02);
-}
-.restaurantMenu .restaurantMenuHeader__likeButton--colored {
-  width: 25px;
-  height: 25px;
-  transform: scale(0);
-  transition: transform 0.5s ease-in-out;
-  transform-origin: 50% 50%;
-}
-
-.starters, .mainCourses, .desserts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0 25px 25px 25px;
-  transform: translateY(50px);
-  opacity: 0;
-  animation: dishAppearance 1s forwards;
-}
-@media screen and (min-width: 767px) {
-  .starters, .mainCourses, .desserts {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-right: 20px;
-  }
-}
-.starters__headline, .mainCourses__headline, .desserts__headline {
-  align-self: flex-start;
-  margin: 10px 0;
-  font-weight: 300;
-}
-.starters__headline::after, .mainCourses__headline::after, .desserts__headline::after {
-  content: "";
-  display: block;
-  border-bottom: 3px solid #99E2D0;
-  width: 40px;
-  padding-top: 5px;
-}
-@media screen and (min-width: 767px) {
-  .starters__headline, .mainCourses__headline, .desserts__headline {
-    width: 100%;
-  }
-}
-
-.starters {
-  animation-delay: 0.4s;
-}
-
-.mainCourses {
-  animation-delay: 1s;
-}
-
-.desserts {
-  animation-delay: 1.6s;
-}
-
-@keyframes dishAppearance {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.flexContainer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.dish {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 5px 5px 8px #e5e5e5;
-  background-color: white;
-  margin-bottom: 12px;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-@media screen and (min-width: 767px) and (max-width: 1024px) {
-  .dish {
-    width: 49%;
-    margin-right: 5px;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .dish {
-    width: 32.5%;
-  }
-}
-.dish__selector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: raw;
-  position: absolute;
-  width: 60px;
-  height: 100%;
-  transform: translateX(60px);
-  right: 0;
-  top: 0;
-  background-color: #99E2D0;
-  border-radius: 0 15px 15px 0;
-  transition: transform 1s ease;
-  transform-origin: 100% 50%;
-}
-.dish__selector .fa-check-circle {
-  font-size: 20px;
-  color: white;
-}
-.dish:hover {
-  cursor: pointer;
-}
-.dish:hover .fa-check-circle {
-  transform: rotate(360deg);
-  transition: transform 0.7s 0.1s ease;
-}
-.dish:hover .dish__price {
-  transform: translateX(-50px);
-  display: block;
-}
-.dish:hover .dish__selector {
-  transform: translateX(0);
-}
-.dish:hover .dish__details {
-  width: calc(75% - 60px);
-}
-.dish:hover .dish__title {
-  width: calc(85% - 50px);
-}
-.dish__title {
-  width: 85%;
-  margin: 12px 0 5px 15px;
-  font-size: 1.02em;
-  transition: all 1s ease;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.dish__details {
-  width: 75%;
-  font-size: 0.85em;
-  margin: 0px 0 5px 15px;
-  transition: all 1s ease;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.dish__price {
-  display: block;
-  margin: 0px 25px 12px 15px;
-  color: #353535;
-  font-weight: 800;
-  transition: transform 1s ease;
 }
 
 .orderButton {

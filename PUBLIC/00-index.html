@@ -11,18 +11,17 @@
     <script src="https://kit.fontawesome.com/a7f7be9ef6.js" crossorigin="anonymous"></script>
     <title>Ohmyfood réservez le menu qui vous convient.</title>
 </head>
+
+<body>
     <div class="loadingSpinner">
-        <div class="loadingSpinner__logo">
-            <img src="../images/logo_et_icones/ohmyfood.svg"/>
-            <div class="loadingSpinner__hide"></div>
-        </div>
-        <div class="loadingSpinner__paris">Paris</div>
-        <div class="loadingSpinner__icone"><i class="fas fa-utensils"></i></div>
+        <div class="loadingSpinner__logo"><img src="../images/logo_et_icones/ohmyfood.svg"/></div>
+        <p class="loadingSpinner__paris">Paris</p>
+        <i class="loadingSpinner__icon fas fa-utensils"></i>
     </div> 
 
-    <div class="blocPage blocPage__animation">
+    <div class="blocPage homePageBlocPage">
         <header class="siteHeader">
-            <h1 class="siteHeader__logoTitle title">ohmyfood</h1>
+            <div class="logo siteHeader__logo">ohmyfood</div>
         </header>
 
         <div class="localisation">
@@ -32,7 +31,7 @@
 
         <div class="presentation">
             <div class="textContainer">
-                <h2 class="presentation__headline">Réservez le menu qui vous convient</h2>
+                <h1 class="presentation__headline">Réservez le menu qui vous convient</h1>
                 <p class="presentation__subhead">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
             </div>
             <a class="bicolorButton presentation__button" type="button" href="#restaurantsListAnchor">Explorer nos restaurants</a>
@@ -54,67 +53,63 @@
 
             <div class="reservationStep"> 
                 <div class="reservationStep__number">3</div>
-                <div class="reservationStep__icon reservationStep__icon--primaryColor"><i class="fas fa-store"></i></div>
+                <div class="reservationStep__icon reservationStep__icon"><i class="fas fa-store"></i></div>
                 <h3 class="reservationStep__headline">Dégustez au restaurant</h3>
             </div>
         </div>
 
         <main class="restaurantsList" id="restaurantsListAnchor">
             <h2 class="restaurantsList__headline">Restaurants</h2>
-            <a class="restaurantCard" href="la_palette_du-gout.html">
+            <a class="restaurantCard" href="01-la_palette_du-gout.html">
                 <article>
                     <img class="restaurantCard__image restaurantCard__image--positioning1" src="../images/restaurants/la_palette_du_gout.jpg" alt="Photo du restaurant La palette du goût" />
                     <h3 class="restaurantCard__headline">La palette du goût</h3>
                     <p class="restaurantCard__location">Ménilmontant</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i><img class="restaurantCard__likeButton--colored" src="../images/logo_et_icones/heart-solid.svg"/></div>
-                    <p class="restaurantCard__labelNew">Nouveau</p>
+                    <div class="likeButton restaurantCard__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="../images/logo_et_icones/heart-solid.svg"/></div>
+                    <p class="restaurantCard__labelNew label">Nouveau</p>
                 </article>
             </a>
 
-            <a class="restaurantCard" href="la_note_enchantee.html">
+            <a class="restaurantCard" href="02-la_note_enchantee.html">
                 <article>
                     <img class="restaurantCard__image restaurantCard__image--positioning2" src="../images/restaurants/la_note_enchantee.jpg" alt="Photo du restaurant La note enchantée" />
                     <h3 class="restaurantCard__headline">La note enchantée</h3>
                     <p class="restaurantCard__location">Charonne</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i><img class="restaurantCard__likeButton--colored" src="../images/logo_et_icones/heart-solid.svg"/></div>
-                    <p class="restaurantCard__labelNew">Nouveau</p>
+                    <div class="likeButton restaurantCard__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="../images/logo_et_icones/heart-solid.svg"/></div>
+                    <p class="label restaurantCard__labelNew">Nouveau</p>
                 </article>
             </a>    
 
-            <a class="restaurantCard" href="a_la_française.html">
+            <a class="restaurantCard" href="03-a_la_française.html">
                 <article>
                     <img class="restaurantCard__image restaurantCard__image--positioning1" src="../images/restaurants/a_la_française.jpg" alt="Photo du restaurant À la française" />
                     <h3 class="restaurantCard__headline">À la française</h3>
                     <p class="restaurantCard__location">Cité Rouge</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i><img class="restaurantCard__likeButton--colored" src="../images/logo_et_icones/heart-solid.svg"/></div>
+                    <div class="likeButton restaurantCard__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="../images/logo_et_icones/heart-solid.svg"/></div>
                 </article>
             </a>
 
-            <a class="restaurantCard" href="le_delice_des_sens.html">
+            <a class="restaurantCard" href="04-le_delice_des_sens.html">
                 <article>
                     <img class="restaurantCard__image restaurantCard__image--positioning1" src="../images/restaurants/le_delice_des_sens.jpg" alt="Photo du restaurant Le délice des sens" />
                     <h3 class="restaurantCard__headline">Le délice des sens</h3>
                     <p class="restaurantCard__location">Folie-Méricourt</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="far fa-heart"></i><img class="restaurantCard__likeButton--colored" src="../images/logo_et_icones/heart-solid.svg"/></div>
+                    <div class="likeButton restaurantCard__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="../images/logo_et_icones/heart-solid.svg"/></div>
                 </article>
             </a>    
         </main>
 
         <footer class="siteFooter">
-            <div class="footerMenu">
-                <h3 class="footerMenu__headline">ohmyfood</h3>
-                <nav>
-                    <ul class="footerNavList">
-                        <li class="footerNavList__item"><a class="footerNavList__link" href="#"><i class="footerNavList__icone fas fa-utensils"></i>Proposer un restaurant</a></li>
-                        <li class="footerNavList__item"><a class="footerNavList__link" href="#"><i class="footerNavList__icone fas fa-hands-helping"></i>Devenir partenaire</a></li>
-                        <li class="footerNavList__item"><a class="footerNavList__link" href="#">Mentions légales</a></li>
-                        <li class="footerNavList__item"><a class="footerNavList__link" href="mailto:">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <div class="logo siteFooter__logo">ohmyfood</div>
+            <nav>
+                <ul class="footerNavList">
+                    <li class="footerNavList__item"><a  href="#"><i class="footerNavList__icone fas fa-utensils"></i>Proposer un restaurant</a></li>
+                    <li class="footerNavList__item"><a  href="#"><i class="footerNavList__icone fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                    <li class="footerNavList__item"><a  href="#">Mentions légales</a></li>
+                    <li class="footerNavList__item"><a  href="mailto:">Contact</a></li>
+                </ul>
+            </nav>
         </footer>
-
-
     </div>
 </body>
 </html>

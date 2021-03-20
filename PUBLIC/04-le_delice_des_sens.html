@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/a7f7be9ef6.js" crossorigin="anonymous"></script>
+    <title>Ohmyfood - Restaurant Le délice des Sens, Folie-Méricourt. Menu, prix et réservations.</title>
+</head>
+
+<body>
+    <div class="blocPage restaurantMenuBlocPage">
+        <header class="siteHeader">
+            <a class="siteHeader__button" href="00-index.html"><i class="fas fa-arrow-left"></i></a>
+            <div class="logo siteHeader__logo">ohmyfood</div>
+        </header>
+        
+        <img class="bannerPicture" src="../images/restaurants/le_delice_des_sens.jpg" alt="Photo du restaurant Le délice des sens" />
+        
+        <main class="restaurantMenu">
+            <div class="restaurantMenuHeader">
+                <h1 class="restaurantMenuHeader__headline">Le délice des sens</h1> 
+                <div class="likeButton restaurantMenuHeader__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="../images/logo_et_icones/heart-solid.svg"/></div>
+            </div>
+
+            <section class="starters">
+                <h2 class="starters__headline">ENTRÉES</h2>  
+                <article class="dish starters__dish">
+                    <h3 class="dish__title">Tartare de thon</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Assaisonné au yuzu</p>
+                        <p class="dish__price">25€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>        
+                </article>
+
+                <article class="dish starters__dish">
+                    <h3 class="dish__title">Bouchée de homard croustillant</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Et sa farandole de petits légumes</p>
+                        <p class="dish__price">35€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish starters__dish">
+                    <h3 class="dish__title">Velouté de cèpes</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Aux truffes</p>
+                        <p class="dish__price">20€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+            </section>
+
+            <section class="mainCourses">
+                <h2 class="mainCourses__headline">PLATS</h2>  
+
+                <article class="dish mainCourses__dish">
+                    <h3 class="dish__title">Poulet rôti aux herbes de <br /> provence</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Et sa crème de truffe</p>
+                        <p class="dish__price">40€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish mainCourses__dish">
+                    <h3 class="dish__title">Langouste rôtie</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Et ses légumes de saison</p>
+                        <p class="dish__price">35€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish mainCourses__dish">
+                    <h3 class="dish__title">Côte de boeuf angus</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Et sa purée de panais</p>
+                        <p class="dish__price">44€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+            </section>
+
+            <section class="desserts">
+                <h2 class="desserts__headline">DESSERTS</h2> 
+
+                <article class="dish desserts__dish">
+                    <h3 class="dish__title">Farandole de desserts</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Du chef</p>
+                        <p class="dish__price">18€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish desserts__dish">
+                    <h3 class="dish__title">Crème brulée</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Revisitée</p>
+                        <p class="dish__price">22€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish desserts__dish">
+                    <h3 class="dish__title">Tiramisu</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">À la noisette</p>
+                        <p class="dish__price">23€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+            </section>
+            
+            <button class="bicolorButton orderButton" type="button">Commander</button>
+        </main>
+
+        <footer class="siteFooter">
+            <div class="logo siteFooter__logo">ohmyfood</div>
+            <nav>
+                <ul class="footerNavList">
+                    <li class="footerNavList__item"><a  href="#"><i class="footerNavList__icone fas fa-utensils"></i>Proposer un restaurant</a></li>
+                    <li class="footerNavList__item"><a  href="#"><i class="footerNavList__icone fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                    <li class="footerNavList__item"><a  href="#">Mentions légales</a></li>
+                    <li class="footerNavList__item"><a  href="mailto:">Contact</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>

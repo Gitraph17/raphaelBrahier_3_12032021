@@ -1,11 +1,17 @@
-body {
-    font-family: "Roboto";
+html {
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
+    @media screen and (min-width:767px) {
+        font-size: 17.6px;
+    }
 }
 
-.title {
-    @include titleTypo;
-@media screen and (min-width:767px) {
-    font-size: 3em;
-    }
+.logo {
+    @include logoTypo;
+}
+
+/** Font-size par défaut des îcones font awesome **/
+.fas, 
+.far {
+    font-size: 1.25rem;
 }

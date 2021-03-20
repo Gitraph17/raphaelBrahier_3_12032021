@@ -1,17 +1,13 @@
 .bicolorButton {
-    border:none;
+    text-align: center;
     height:50px;
     min-width: 185px;
     padding:0 26.5px;
     border-radius: 25px;
     background: linear-gradient($color-secondary ,$color-primary);
     color: white;
-    font-size: 1em;
-    font-weight: 400;
     box-shadow: 0px 2px 8px #a3a2a2;
-    &:focus {
-        outline: none;
-    }
+    white-space: nowrap;
     &:hover {
         cursor: pointer;
         background: linear-gradient($light-color-secondary ,$light-color-primary);
@@ -19,6 +15,25 @@
     }
 }
 
-.likeButton, {
-    font-size: 25px;
+.likeButton {
+    @include flexCentering;
+    font-size: 1.5625rem;
+    & > .purpleHeartIcon {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        transform: scale(0);
+        transition: transform 0.5s ease-in-out;
+        transform-origin: 50% 50%;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover > .heartIcon {
+        transform: scale(0.87); 
+        transition: transform 0.05s 0.45s ease-in-out;
+    }
+    &:hover > .purpleHeartIcon{
+        transform:scale(1.02) rotate(0.01deg); /**L'ajout de cette minuscule rotation invisible à l'oeil permet de réduire les risques d'un mauvais rendu de l'animation sur le navigateur Firefox. **/
+    }
 }

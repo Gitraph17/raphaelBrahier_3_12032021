@@ -1,0 +1,140 @@
+.restaurantMenu {
+    position: relative;
+    top:-55px;
+    @include mainBackgroundColor;
+    border-radius: 40px 40px 0 0;
+    & .restaurantMenuHeader {
+       @include logoTypo;
+       @include flexPositioning (row, space-between, center);
+       margin: 0px 40px 0 20px;
+       padding-top: 10px;
+       &__headline {
+           font-weight: 500;
+           font-size: 1.7rem;
+       }
+    }
+}  
+
+@keyframes dishAppearance{
+    0%   {
+        transform:translateY(50px);
+        opacity: 0;
+    }
+    100% { 
+        transform:translateY(0);
+        opacity: 1;
+    }
+}
+
+.starters, .mainCourses, .desserts {
+    @include flexCentering(column);
+    margin: 0 20px 20px 20px;
+    transform:translateY(50px);
+    opacity:0;
+    animation: dishAppearance 1s forwards;
+    &__headline {
+        font-weight: 400;
+        font-size: 1rem;
+        align-self: flex-start;
+        margin: 10px 0;
+        &::after {
+            content:"";
+            display: block;
+            border-bottom: 3px solid $color-tertiary;
+            width: 40px;
+            padding-top: 5px;
+        }
+        @media screen and (min-width:767px) {
+            width:100%;
+        }
+    }
+    @media screen and (min-width:767px){
+        @include flexPositioning (row, space-between, center);
+        flex-wrap: wrap;
+    }
+}
+
+.starters {
+    animation-delay: 0.4s;
+}
+
+.mainCourses {
+    animation-delay: 1s;
+}
+
+.desserts {
+    animation-delay: 1.6s;
+}
+
+.dish {
+    $self: &;
+    @include contentBlocksCommonProperties(15px);
+    background-color: white;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+    @media screen and (min-width:767px) and (max-width:1024px) {
+        width: 49%;
+    }
+    @media screen and (min-width:1025px) {
+        width: 32.5%;
+    }
+    & > .dishInfoContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        font-size: 1.05rem;
+        width: 85%;
+        margin:12px 0 5px 15px;
+        transition: all 1s ease;
+        @include cutExtraTextWithEllipsis;
+    }
+    &__details {
+        font-size: 0.88rem;
+        width: 75%;
+        margin:0px 0 5px 15px;
+        transition: all 1s ease;
+        @include cutExtraTextWithEllipsis;
+    }
+    &__price {
+        font-weight: bold;
+        margin:0px 20px 12px 15px;
+        color: $color-darkgrey;
+        transition: transform 1s ease;
+    }
+    &__selector {
+        @include flexCentering;
+        position: absolute;
+        right:0;
+        top:0;
+        width:60px;
+        height:100%;
+        transform:translateX(60px);
+        background-color: $color-tertiary;
+        transition: transform 1s ease;
+        transform-origin: 100% 50%;
+        & .checkIcon {
+            color:white;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover .checkIcon {
+        transform: rotate(360deg);
+        transition: transform 0.7s 0.1s ease;
+    }
+    &:hover #{$self}__price{
+        transform: translateX(-50px);
+    }
+    &:hover #{$self}__selector {
+        transform:translateX(0);
+    }
+    &:hover #{$self}__details {
+        width: calc(75% - 60px);
+    }
+    &:hover #{$self}__title {
+        width: calc(85% - 50px);
+    }
+}

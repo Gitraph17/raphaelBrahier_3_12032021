@@ -1,15 +1,16 @@
 .siteHeader {
     @include flexCentering;
-    position: relative;
     background-color: white;
-    &__logoTitle {
-        margin: 15px 0 5px 0;
+    padding: 10px 20px 5px 20px;
+    &__logo {
+        margin: auto;
+        font-size: 2rem;
+        @media screen and (min-width:767px) {
+            font-size: 2.5rem;
+        }
     }
     &__button {
-        position: absolute;
-        left: 25px;
-        bottom: 20px;
-        color: #353535;
-        font-size: 1.2em;
+        color: $color-darkgrey;
+        margin-right: -17.5px; /**marge négative de la largeur du bouton pour un centrage horizontale exacte du logo**/
     }
 }

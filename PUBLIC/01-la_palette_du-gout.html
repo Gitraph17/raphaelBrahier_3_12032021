@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/a7f7be9ef6.js" crossorigin="anonymous"></script>
+    <title>Ohmyfood - La palette du Goût, Ménilmontant. Menu, prix et réservations.</title>
+</head>
+
+<body>
+    <div class="blocPage restaurantMenuBlocPage">
+        <header class="siteHeader">
+            <a class="siteHeader__button" href="00-index.html"><i class="fas fa-arrow-left"></i></a>
+            <div class="logo siteHeader__logo">ohmyfood</div>
+        </header>
+        
+        <img class="bannerPicture" src="../images/restaurants/la_palette_du_gout.jpg" alt="Photo du restaurant A la française" />
+        
+        <main class="restaurantMenu">
+            <div class="restaurantMenuHeader">
+                <h1 class="restaurantMenuHeader__headline">La palette du goût</h1> 
+                <div class="likeButton restaurantMenuHeader__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="../images/logo_et_icones/heart-solid.svg"/></div>
+            </div>
+
+            <section class="starters">
+                <h2 class="starters__headline">ENTRÉES</h2>  
+
+                <article class="dish starters__dish">
+                    <h3 class="dish__title">Fricassée d'escargot</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Au piment d'espelette</p>
+                        <p class="dish__price">25€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish starters__dish">
+                    <h3 class="dish__title">Foie gras de canard mi-cuit</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Et ses copeaux de truffe noir</p>
+                        <p class="dish__price">35€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish starters__dish">
+                    <h3 class="dish__title">Oeuf au plat</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Assaisonné à la truffe sur lit de caviar</p>
+                        <p class="dish__price">20€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+            </section>
+
+            <section class="mainCourses">
+                <h2 class="mainCourses__headline">PLATS</h2>  
+
+                <article class="dish mainCourses__dish">
+                    <h3 class="dish__title">Filet de boeuf aux herbes</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Accompagné de sa ribambelle de légumes</p>
+                        <p class="dish__price">40€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish mainCourses__dish">
+                    <h3 class="dish__title">Parmentier de queue de boeuf</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">À la truffe noir sur purée de panais</p>
+                        <p class="dish__price">35€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish mainCourses__dish">
+                    <h3 class="dish__title">Filet de Turbot</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Aux agrumes</p>
+                        <p class="dish__price">44€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+            </section>
+
+            <section class="desserts">
+                <h2 class="desserts__headline">DESSERTS</h2> 
+
+                <article class="dish desserts__dish">
+                    <h3 class="dish__title">Paris-Brest</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Revisité</p>
+                        <p class="dish__price">18€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish desserts__dish">
+                    <h3 class="dish__title">Macaron au chocolat d'exception</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Et glace à la vanille de Madagascar</p>
+                        <p class="dish__price">22€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+
+                <article class="dish desserts__dish">
+                    <h3 class="dish__title">Mousse au chocolat</h3>
+                    <div class="dishInfoContainer">
+                        <p class="dish__details">Au piment d'espelette et à la truffe noire</p>
+                        <p class="dish__price">23€</p>
+                    </div>
+                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                </article>
+            </section>
+
+            <button class="bicolorButton orderButton" type="button">Commander</button>
+        </main>
+
+        <footer class="siteFooter">
+            <div class="logo siteFooter__logo">ohmyfood</div>
+            <nav>
+                <ul class="footerNavList">
+                    <li class="footerNavList__item"><a  href="#"><i class="footerNavList__icone fas fa-utensils"></i>Proposer un restaurant</a></li>
+                    <li class="footerNavList__item"><a  href="#"><i class="footerNavList__icone fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                    <li class="footerNavList__item"><a  href="#">Mentions légales</a></li>
+                    <li class="footerNavList__item"><a  href="mailto:">Contact</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>

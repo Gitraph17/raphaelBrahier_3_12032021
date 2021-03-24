@@ -15,25 +15,31 @@
     }
 }
 
-.likeButton {
-    @include flexCentering;
-    font-size: 1.5625rem;
-    & > .purpleHeartIcon {
-        position: absolute;
-        width: 25px;
-        height: 25px;
+
+/**Pour la mise en forme du bouton "like" qui suit, les deux types d'icône coeur (non coloré et bicolore) 
+sont présents dans le même élément svg introduit inline dans le document html.**/
+#buttonLikeInp,
+#buttonLikeInp0,
+#buttonLikeInp1,
+#buttonLikeInp2,
+#buttonLikeInp3  {
+  display: none;
+  &:checked + label .heartIconColored {
+    transform: scale(1);
+  }
+}
+
+.buttonLikeLabel {
+    &__icon {
+    cursor: pointer;
+    width:25px;
+    height:25px;
+    margin-bottom: -3px;
+    &--colored{
         transform: scale(0);
-        transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s 0s ease-in-out;
         transform-origin: 50% 50%;
     }
-    &:hover {
-        cursor: pointer;
-    }
-    &:hover > .heartIcon {
-        transform: scale(0.87); 
-        transition: transform 0.05s 0.45s ease-in-out;
-    }
-    &:hover > .purpleHeartIcon{
-        transform:scale(1.02) rotate(0.01deg); /**L'ajout de cette minuscule rotation invisible à l'oeil permet de réduire les risques d'un mauvais rendu de l'animation sur le navigateur Firefox. **/
     }
 }
+  

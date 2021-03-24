@@ -50,7 +50,7 @@
 }
 
 @mixin contentBlocksCommonProperties($borderRadiusSize:25px){
-  width:100%; 
+  width: 100%;
   border-radius: $borderRadiusSize;
   @include mainBoxShadow;
 }

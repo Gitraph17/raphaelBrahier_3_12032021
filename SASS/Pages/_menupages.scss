@@ -1,3 +1,7 @@
+.restaurantMenuBlocPage {
+    @include mainBackgroundColor
+}
+
 .restaurantMenu {
     position: relative;
     top:-55px;
@@ -83,18 +87,21 @@
         display: flex;
         justify-content: space-between;
     }
+    & > .dishTitleContainer {
+        display: flex;
+    }
     &__title {
+        width: 88%;
         font-size: 1.05rem;
-        width: 85%;
         margin:12px 0 5px 15px;
-        transition: all 1s ease;
+        transition: all 2s ease;
         @include cutExtraTextWithEllipsis;
     }
     &__details {
         font-size: 0.88rem;
-        width: 75%;
+        width: 90%;
         margin:0px 0 5px 15px;
-        transition: all 1s ease;
+        transition: all 2s ease;
         @include cutExtraTextWithEllipsis;
     }
     &__price {
@@ -105,11 +112,11 @@
     }
     &__selector {
         @include flexCentering;
+        width:60px;
+        height:100%;
         position: absolute;
         right:0;
         top:0;
-        width:60px;
-        height:100%;
         transform:translateX(60px);
         background-color: $color-tertiary;
         transition: transform 1s ease;
@@ -125,16 +132,23 @@
         transform: rotate(360deg);
         transition: transform 0.7s 0.1s ease;
     }
-    &:hover #{$self}__price{
-        transform: translateX(-50px);
-    }
     &:hover #{$self}__selector {
         transform:translateX(0);
     }
+    &:hover #{$self}__price{
+        transform: translateX(-50px);
+    }
     &:hover #{$self}__details {
-        width: calc(75% - 60px);
+       width: calc(100% - 120px);
+       transition: all 0.7s ease;
     }
     &:hover #{$self}__title {
-        width: calc(85% - 50px);
+        width: calc(100% - 80px);
+        transition: all 0.7s ease;
     }
+}
+
+.orderButton {
+    display: block;
+    margin:35px auto 10px auto;
 }

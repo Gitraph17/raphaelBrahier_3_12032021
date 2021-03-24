@@ -59,6 +59,7 @@
     opacity:0;
     animation: appear 0.5s 3.4s forwards;
 }
+
 .loadingSpinner {
     @include flexCentering(column);
     width:100%;

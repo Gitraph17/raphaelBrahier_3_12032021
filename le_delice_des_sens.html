@@ -23,7 +23,10 @@
         <main class="restaurantMenu">
             <div class="restaurantMenuHeader">
                 <h1 class="restaurantMenuHeader__headline">Le délice des sens</h1> 
-                <div class="likeButton restaurantMenuHeader__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="./images/logo_et_icones/heart-solid.svg"/></div>
+                <input type="checkbox" id="buttonLikeInp">
+                <label for="buttonLikeInp" class="buttonLikeLabel">
+                    <svg class="buttonLikeLabel__icon" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600"> <path class="buttonLikeLabel__icon--uncolored" fill="none" stroke="black"  stroke-width="30" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path> <path class="buttonLikeLabel__icon--colored heartIconColored" fill="url(#MyGradient)" stroke="url(#MyGradient)"  stroke-width="40" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path> <linearGradient id="MyGradient" x1="0" x2="0" y1="0" y2="1"> <stop offset="10%"  stop-color="#9356DC"/> <stop offset="90%" stop-color="#FF79DA"/> </linearGradient> </svg>
+                </label>          
             </div>
 
             <section class="starters">
@@ -34,7 +37,7 @@
                         <p class="dish__details">Assaisonné au yuzu</p>
                         <p class="dish__price">25€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>        
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>        
                 </article>
 
                 <article class="dish starters__dish">
@@ -43,7 +46,7 @@
                         <p class="dish__details">Et sa farandole de petits légumes</p>
                         <p class="dish__price">35€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>
                 </article>
 
                 <article class="dish starters__dish">
@@ -52,7 +55,7 @@
                         <p class="dish__details">Aux truffes</p>
                         <p class="dish__price">20€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>
                 </article>
             </section>
 
@@ -65,7 +68,7 @@
                         <p class="dish__details">Et sa crème de truffe</p>
                         <p class="dish__price">40€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>
                 </article>
 
                 <article class="dish mainCourses__dish">
@@ -74,7 +77,7 @@
                         <p class="dish__details">Et ses légumes de saison</p>
                         <p class="dish__price">35€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>
                 </article>
 
                 <article class="dish mainCourses__dish">
@@ -83,7 +86,7 @@
                         <p class="dish__details">Et sa purée de panais</p>
                         <p class="dish__price">44€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>
                 </article>
 
             </section>
@@ -97,7 +100,7 @@
                         <p class="dish__details">Du chef</p>
                         <p class="dish__price">18€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>
                 </article>
 
                 <article class="dish desserts__dish">
@@ -106,7 +109,7 @@
                         <p class="dish__details">Revisitée</p>
                         <p class="dish__price">22€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>
                 </article>
 
                 <article class="dish desserts__dish">
@@ -115,7 +118,7 @@
                         <p class="dish__details">À la noisette</p>
                         <p class="dish__price">23€</p>
                     </div>
-                    <div class="dish__selector"><div><i class="checkIcon fas fa-check-circle"></i></div></div>
+                    <div class="dish__selector"><i class="checkIcon fas fa-check-circle"></i></div>
                 </article>
             </section>
             

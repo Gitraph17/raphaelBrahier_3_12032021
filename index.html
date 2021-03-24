@@ -14,7 +14,7 @@
 
 <body>
     <div class="loadingSpinner">
-        <div class="loadingSpinner__logo"><img src="./images/logo_et_icones/ohmyfood.svg"/></div>
+        <div class="loadingSpinner__logo"><img src="./images/logo_et_icones/ohmyfood.svg" alt="logo ohmyfood indiquant le chargement de la page"/></div>
         <p class="loadingSpinner__paris">Paris</p>
         <i class="loadingSpinner__icon fas fa-utensils"></i>
     </div> 
@@ -29,15 +29,15 @@
             <p class="localisation__place">Paris, Belleville</p>
         </div>
 
-        <div class="presentation">
+        <section class="presentation">
             <div class="textContainer">
                 <h1 class="presentation__headline">Réservez le menu qui vous convient</h1>
                 <p class="presentation__subhead">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
             </div>
-            <a class="bicolorButton presentation__button" type="button" href="#restaurantsListAnchor">Explorer nos restaurants</a>
-        </div>
+            <a class="bicolorButton presentation__button"  href="#restaurantsListAnchor">Explorer nos restaurants</a>
+        </section>
 
-        <div class="reservationProcess">
+        <section class="reservationProcess">
             <h2 class="reservationProcess__headline">Fonctionnement</h2>
             <div class="reservationStep"> 
                 <div class="reservationStep__number">1</div>
@@ -56,47 +56,55 @@
                 <div class="reservationStep__icon reservationStep__icon"><i class="fas fa-store"></i></div>
                 <h3 class="reservationStep__headline">Dégustez au restaurant</h3>
             </div>
-        </div>
+        </section>
 
         <main class="restaurantsList" id="restaurantsListAnchor">
             <h2 class="restaurantsList__headline">Restaurants</h2>
-            <a class="restaurantCard" href="la_palette_du-gout.html">
-                <article>
-                    <img class="restaurantCard__image restaurantCard__image--positioning1" src="./images/restaurants/la_palette_du_gout.jpg" alt="Photo du restaurant La palette du goût" />
-                    <h3 class="restaurantCard__headline">La palette du goût</h3>
-                    <p class="restaurantCard__location">Ménilmontant</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="./images/logo_et_icones/heart-solid.svg"/></div>
-                    <p class="restaurantCard__labelNew label">Nouveau</p>
-                </article>
-            </a>
+            <article class="restaurantCard"> 
+                <a class="restaurantCard__link" href="la_palette_du-gout.html"></a>
+                <img class="restaurantCard__image restaurantCard__image--positioning1" src="./images/restaurants/la_palette_du_gout.jpg" alt="Photo du restaurant La palette du goût" />
+                <h3 class="restaurantCard__headline">La palette du goût</h3>
+                <p class="restaurantCard__location">Ménilmontant</p>
+                <input type="checkbox" id="buttonLikeInp0">
+                <label for="buttonLikeInp0" class="buttonLikeLabel">
+                    <svg class="buttonLikeLabel__icon" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600"> <path class="buttonLikeLabel__icon--uncolored" fill="none" stroke="black"  stroke-width="30" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path> <path class="buttonLikeLabel__icon--colored heartIconColored" fill="url(#MyGradient)" stroke="url(#MyGradient)"  stroke-width="40" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path> <linearGradient id="MyGradient" x1="0" x2="0" y1="0" y2="1"> <stop offset="10%"  stop-color="#9356DC"/> <stop offset="90%" stop-color="#FF79DA"/> </linearGradient></svg>
+                </label>
+                <p class="sticker restaurantCard__stickerNew">Nouveau</p>
+            </article>
 
-            <a class="restaurantCard" href="la_note_enchantee.html">
-                <article>
-                    <img class="restaurantCard__image restaurantCard__image--positioning2" src="./images/restaurants/la_note_enchantee.jpg" alt="Photo du restaurant La note enchantée" />
-                    <h3 class="restaurantCard__headline">La note enchantée</h3>
-                    <p class="restaurantCard__location">Charonne</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="./images/logo_et_icones/heart-solid.svg"/></div>
-                    <p class="label restaurantCard__labelNew">Nouveau</p>
-                </article>
-            </a>    
+            <article class="restaurantCard">
+                <a class="restaurantCard__link" href="la_note_enchantee.html"></a>
+                <img class="restaurantCard__image restaurantCard__image--positioning2" src="./images/restaurants/la_note_enchantee.jpg" alt="Photo du restaurant La note enchantée" />
+                <h3 class="restaurantCard__headline">La note enchantée</h3>
+                <p class="restaurantCard__location">Charonne</p>
+                <input type="checkbox" id="buttonLikeInp1">
+                <label for="buttonLikeInp1" class="buttonLikeLabel">
+                    <svg class="buttonLikeLabel__icon" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600"> <path class="buttonLikeLabel__icon--uncolored" fill="none" stroke="black"  stroke-width="30" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path> <path class="buttonLikeLabel__icon--colored heartIconColored" fill="url(#MyGradient)" stroke="url(#MyGradient)"  stroke-width="40" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+                </label>
+                <p class="sticker restaurantCard__stickerNew">Nouveau</p>
+            </article>
 
-            <a class="restaurantCard" href="a_la_française.html">
-                <article>
-                    <img class="restaurantCard__image restaurantCard__image--positioning1" src="./images/restaurants/a_la_française.jpg" alt="Photo du restaurant À la française" />
-                    <h3 class="restaurantCard__headline">À la française</h3>
-                    <p class="restaurantCard__location">Cité Rouge</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="./images/logo_et_icones/heart-solid.svg"/></div>
-                </article>
-            </a>
+            <article class="restaurantCard">
+                <a class="restaurantCard__link" href="a_la_française.html"></a>
+                <img class="restaurantCard__image restaurantCard__image--positioning1" src="./images/restaurants/a_la_française.jpg" alt="Photo du restaurant À la française" />
+                <h3 class="restaurantCard__headline">À la française</h3>
+                <p class="restaurantCard__location">Cité Rouge</p>
+                <input type="checkbox" id="buttonLikeInp2">
+                <label for="buttonLikeInp2" class="buttonLikeLabel">
+                    <svg class="buttonLikeLabel__icon" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600"> <path class="buttonLikeLabel__icon--uncolored" fill="none" stroke="black"  stroke-width="30" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path> <path class="buttonLikeLabel__icon--colored heartIconColored" fill="url(#MyGradient)" stroke="url(#MyGradient)"  stroke-width="40" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+                </label>
+            </article>
 
-            <a class="restaurantCard" href="le_delice_des_sens.html">
-                <article>
-                    <img class="restaurantCard__image restaurantCard__image--positioning1" src="./images/restaurants/le_delice_des_sens.jpg" alt="Photo du restaurant Le délice des sens" />
-                    <h3 class="restaurantCard__headline">Le délice des sens</h3>
-                    <p class="restaurantCard__location">Folie-Méricourt</p>
-                    <div class="likeButton restaurantCard__likeButton"><i class="heartIcon far fa-heart"></i><img class="purpleHeartIcon" src="./images/logo_et_icones/heart-solid.svg"/></div>
-                </article>
-            </a>    
+            <article class="restaurantCard">
+                <a class="restaurantCard__link" href="le_delice_des_sens.html"></a>
+                <img class="restaurantCard__image restaurantCard__image--positioning1" src="./images/restaurants/le_delice_des_sens.jpg" alt="Photo du restaurant Le délice des sens" />
+                <h3 class="restaurantCard__headline">Le délice des sens</h3>
+                <p class="restaurantCard__location">Folie-Méricourt</p>
+                <input type="checkbox" id="buttonLikeInp3">
+                <label for="buttonLikeInp3" class="buttonLikeLabel">
+                    <svg class="buttonLikeLabel__icon" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 600"> <path class="buttonLikeLabel__icon--uncolored" fill="none" stroke="black"  stroke-width="30" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path> <path class="buttonLikeLabel__icon--colored heartIconColored" fill="url(#MyGradient)" stroke="url(#MyGradient)"  stroke-width="40" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+                </label>
+            </article>   
         </main>
 
         <footer class="siteFooter">

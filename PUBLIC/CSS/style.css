@@ -169,36 +169,38 @@ html {
   box-shadow: 2px 4px 9px #807f7f;
 }
 
-.likeButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  font-size: 1.5625rem;
+/**Pour la mise en forme du bouton "like" qui suit, les deux types d'icône coeur (non coloré et bicolore) 
+sont présents dans le même élément svg introduit inline dans le document html.**/
+#buttonLikeInp,
+#buttonLikeInp0,
+#buttonLikeInp1,
+#buttonLikeInp2,
+#buttonLikeInp3 {
+  display: none;
 }
-.likeButton > .purpleHeartIcon {
-  position: absolute;
+#buttonLikeInp:checked + label .heartIconColored,
+#buttonLikeInp0:checked + label .heartIconColored,
+#buttonLikeInp1:checked + label .heartIconColored,
+#buttonLikeInp2:checked + label .heartIconColored,
+#buttonLikeInp3:checked + label .heartIconColored {
+  transform: scale(1);
+}
+
+.buttonLikeLabel__icon {
+  cursor: pointer;
   width: 25px;
   height: 25px;
+  margin-bottom: -3px;
+}
+.buttonLikeLabel__icon--colored {
   transform: scale(0);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s 0s ease-in-out;
   transform-origin: 50% 50%;
-}
-.likeButton:hover {
-  cursor: pointer;
-}
-.likeButton:hover > .heartIcon {
-  transform: scale(0.87);
-  transition: transform 0.05s 0.45s ease-in-out;
-}
-.likeButton:hover > .purpleHeartIcon {
-  transform: scale(1.02) rotate(0.01deg);
-  /**L'ajout de cette minuscule rotation invisible à l'oeil permet de réduire les risques d'un mauvais rendu de l'animation sur le navigateur Firefox. **/
 }
 
 /**Ce partiel contient la mise en forme de l'étiquette "Nouveau" (labelNew) affichée sur les cards des restaurants 
 de la home-page**/
-.label {
+.sticker {
   width: 80px;
   height: 29px;
   border-radius: 3px;
@@ -241,173 +243,6 @@ de la home-page**/
   .bannerPicture {
     height: 350px;
   }
-}
-
-.restaurantMenu {
-  position: relative;
-  top: -55px;
-  background-color: #f6f6f6;
-  border-radius: 40px 40px 0 0;
-}
-.restaurantMenu .restaurantMenuHeader {
-  font-family: "shrikhand";
-  font-weight: 300;
-  font-size: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0px 40px 0 20px;
-  padding-top: 10px;
-}
-.restaurantMenu .restaurantMenuHeader__headline {
-  font-weight: 500;
-  font-size: 1.7rem;
-}
-
-@keyframes dishAppearance {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.starters, .mainCourses, .desserts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 20px 20px 20px;
-  transform: translateY(50px);
-  opacity: 0;
-  animation: dishAppearance 1s forwards;
-}
-.starters__headline, .mainCourses__headline, .desserts__headline {
-  font-weight: 400;
-  font-size: 1rem;
-  align-self: flex-start;
-  margin: 10px 0;
-}
-.starters__headline::after, .mainCourses__headline::after, .desserts__headline::after {
-  content: "";
-  display: block;
-  border-bottom: 3px solid #99E2D0;
-  width: 40px;
-  padding-top: 5px;
-}
-@media screen and (min-width: 767px) {
-  .starters__headline, .mainCourses__headline, .desserts__headline {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 767px) {
-  .starters, .mainCourses, .desserts {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-.starters {
-  animation-delay: 0.4s;
-}
-
-.mainCourses {
-  animation-delay: 1s;
-}
-
-.desserts {
-  animation-delay: 1.6s;
-}
-
-.dish {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 5px 5px 8px #e5e5e5;
-  background-color: white;
-  margin-bottom: 12px;
-  position: relative;
-  overflow: hidden;
-}
-@media screen and (min-width: 767px) and (max-width: 1024px) {
-  .dish {
-    width: 49%;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .dish {
-    width: 32.5%;
-  }
-}
-.dish > .dishInfoContainer {
-  display: flex;
-  justify-content: space-between;
-}
-.dish__title {
-  font-size: 1.05rem;
-  width: 85%;
-  margin: 12px 0 5px 15px;
-  transition: all 1s ease;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.dish__details {
-  font-size: 0.88rem;
-  width: 75%;
-  margin: 0px 0 5px 15px;
-  transition: all 1s ease;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.dish__price {
-  font-weight: bold;
-  margin: 0px 20px 12px 15px;
-  color: #353535;
-  transition: transform 1s ease;
-}
-.dish__selector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 60px;
-  height: 100%;
-  transform: translateX(60px);
-  background-color: #99E2D0;
-  transition: transform 1s ease;
-  transform-origin: 100% 50%;
-}
-.dish__selector .checkIcon {
-  color: white;
-}
-.dish:hover {
-  cursor: pointer;
-}
-.dish:hover .checkIcon {
-  transform: rotate(360deg);
-  transition: transform 0.7s 0.1s ease;
-}
-.dish:hover .dish__price {
-  transform: translateX(-50px);
-}
-.dish:hover .dish__selector {
-  transform: translateX(0);
-}
-.dish:hover .dish__details {
-  width: calc(75% - 60px);
-}
-.dish:hover .dish__title {
-  width: calc(85% - 50px);
 }
 
 footer {
@@ -591,6 +426,7 @@ footer .footerNavList__icone {
   position: relative;
   background-color: white;
   transition: transform 0.3s;
+  z-index: 0;
 }
 @media screen and (min-width: 767px) {
   .restaurantCard {
@@ -598,7 +434,13 @@ footer .footerNavList__icone {
     width: 47%;
   }
 }
-.restaurantCard__labelNew {
+.restaurantCard__link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.restaurantCard__stickerNew {
   position: absolute;
   top: 0;
   right: 16px;
@@ -631,10 +473,11 @@ footer .footerNavList__icone {
 .restaurantCard__location {
   margin: 0 0 15px 15px;
 }
-.restaurantCard__likeButton {
+.restaurantCard svg {
   position: absolute;
   right: 25px;
-  bottom: 30px;
+  bottom: 33px;
+  z-index: 2;
 }
 .restaurantCard:hover {
   transform: scale(1.03);
@@ -642,6 +485,178 @@ footer .footerNavList__icone {
 
 .restaurantMenuBlocPage {
   background-color: #f6f6f6;
+}
+
+.restaurantMenu {
+  position: relative;
+  top: -55px;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+}
+.restaurantMenu .restaurantMenuHeader {
+  font-family: "shrikhand";
+  font-weight: 300;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 40px 0 20px;
+  padding-top: 10px;
+}
+.restaurantMenu .restaurantMenuHeader__headline {
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+@keyframes dishAppearance {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.starters, .mainCourses, .desserts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20px 20px 20px;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: dishAppearance 1s forwards;
+}
+.starters__headline, .mainCourses__headline, .desserts__headline {
+  font-weight: 400;
+  font-size: 1rem;
+  align-self: flex-start;
+  margin: 10px 0;
+}
+.starters__headline::after, .mainCourses__headline::after, .desserts__headline::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+  padding-top: 5px;
+}
+@media screen and (min-width: 767px) {
+  .starters__headline, .mainCourses__headline, .desserts__headline {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 767px) {
+  .starters, .mainCourses, .desserts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.starters {
+  animation-delay: 0.4s;
+}
+
+.mainCourses {
+  animation-delay: 1s;
+}
+
+.desserts {
+  animation-delay: 1.6s;
+}
+
+.dish {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 5px 5px 8px #e5e5e5;
+  background-color: white;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .dish {
+    width: 49%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .dish {
+    width: 32.5%;
+  }
+}
+.dish > .dishInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.dish > .dishTitleContainer {
+  display: flex;
+}
+.dish__title {
+  width: 88%;
+  font-size: 1.05rem;
+  margin: 12px 0 5px 15px;
+  transition: all 2s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dish__details {
+  font-size: 0.88rem;
+  width: 90%;
+  margin: 0px 0 5px 15px;
+  transition: all 2s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dish__price {
+  font-weight: bold;
+  margin: 0px 20px 12px 15px;
+  color: #353535;
+  transition: transform 1s ease;
+}
+.dish__selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(60px);
+  background-color: #99E2D0;
+  transition: transform 1s ease;
+  transform-origin: 100% 50%;
+}
+.dish__selector .checkIcon {
+  color: white;
+}
+.dish:hover {
+  cursor: pointer;
+}
+.dish:hover .checkIcon {
+  transform: rotate(360deg);
+  transition: transform 0.7s 0.1s ease;
+}
+.dish:hover .dish__selector {
+  transform: translateX(0);
+}
+.dish:hover .dish__price {
+  transform: translateX(-50px);
+}
+.dish:hover .dish__details {
+  width: calc(100% - 120px);
+  transition: all 0.7s ease;
+}
+.dish:hover .dish__title {
+  width: calc(100% - 80px);
+  transition: all 0.7s ease;
 }
 
 .orderButton {

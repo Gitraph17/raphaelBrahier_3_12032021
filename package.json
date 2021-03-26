@@ -4,7 +4,8 @@
   "description": "OpenClassRooms Parcours développeur Web Projet n°3: OhMyFood!",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./SASS/main.scss:PUBLIC/CSS/style.css"
+    "sass": "sass --watch ./SASS/main.scss:PUBLIC/CSS/style.css --style compressed",
+    "prefix": "postcss ./PUBLIC/CSS/style.css --use autoprefixer -d ./PUBLIC/CSS"
   },
   "repository": {
     "type": "git",
@@ -12,7 +13,11 @@
   },
   "author": "Raphael Brahier",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "devDependencies": {
-    "sass": "^1.32.8"
+  "autoprefixer": "^10.2.5",
+  "postcss": "^8.2.8",
+  "postcss-cli": "^8.3.1",
+  "sass": "^1.32.8"
   }
 }

@@ -1,18 +1,15 @@
-footer {
+.siteFooter {
     background-color:$color-darkgrey;
     color:white;
     padding:20px;
     & .footerNavList {
         &__logo {
             font-size: 1.25rem;
-            @media screen and (min-width:767px) {
-                font-size: 1.5rem;
-            }
         }
         &__item {
             padding-bottom: 10px;
         }
-        &__icone {
+        &__icon {
             font-size: 0.8rem;
             width:10px;
             margin-right: 12px;

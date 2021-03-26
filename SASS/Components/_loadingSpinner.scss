@@ -78,7 +78,7 @@
     }
     &__logo{
         position: relative;
-        &::after { /**Ce bloque masque le logo puis le laisse apparaitre progressivement**/
+        &::after { /**Ce pseudo-élément est un block qui masque le logo puis le laisse apparaitre progressivement**/
             content: "";
             display: block;
             height:48px;
@@ -87,13 +87,13 @@
             top:0;
             background-color: white;
             animation: hidingBlockVerticalTranslation ease-in 2.35s forwards;
-            @media screen and (min-width:767px) {
+            @media screen and (min-width:768px) {
                 width:110%;
                 height:110%;
             }
         }
         & > img {
-            @media screen and (min-width:767px) {
+            @media screen and (min-width:768px) {
                 width:340px;
             }
         }

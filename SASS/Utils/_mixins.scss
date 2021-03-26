@@ -17,17 +17,17 @@
 }
 
 @mixin logoTypo($font-size:2rem){
-    font-family:"shrikhand";
-    font-weight: 300;
-    font-size: $font-size;
+  font-family:"shrikhand";
+  font-weight: 300;
+  font-size: $font-size;
   }
 
-  @mixin homePageMainHeadlineTypo {
-    font-size: 1.6rem;
-    font-weight: 600;
+@mixin homePageMainHeadlineTypo {
+  font-size: 1.6rem;
+  font-weight: 600;
   }
 
-@mixin flexCentering ($flexDir:row,) {
+@mixin flexCentering ($flexDir:row) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,18 +41,10 @@
   align-items: $alignItems;
 }
 
-@mixin mainBoxShadow {
-  box-shadow: 5px 5px 8px #e5e5e5;
-}
-
-@mixin mainBackgroundColor {
-  background-color: #f6f6f6;
-}
-
 @mixin contentBlocksCommonProperties($borderRadiusSize:25px){
   width: 100%;
   border-radius: $borderRadiusSize;
-  @include mainBoxShadow;
+  box-shadow: $mainBoxShadow;
 }
 
 @mixin cutExtraTextWithEllipsis {

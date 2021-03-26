@@ -37,7 +37,7 @@ sont présents dans le même élément svg introduit inline dans le document htm
     margin-bottom: -3px;
     &--colored{
         transform: scale(0);
-        transition: transform 0.5s 0s ease-in-out;
+        transition: transform 0.5s ease-in-out;
         transform-origin: 50% 50%;
     }
     }
